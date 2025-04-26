@@ -1,36 +1,30 @@
-import Banner from '@/components/Banner'
-import Discover from '@/components/Discover'
-import Header from '@/components/Header'
-import Leaderboards from '@/components/Leaderboards'
-import Marketplace from '@/components/Marketplace'
-import OverallStats from '@/components/OverallStats'
-import Sidebar from '@/components/Sidebar'
+import Discover from "@/components/Discover";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Leaderboards from "@/components/Leaderboards";
+import Marketplace from "@/components/Marketplace";
+import OverallStats from "@/components/OverallStats";
+import Sidebar from "@/components/Sidebar";
 
 const banners = [
-	'/banners/atias-legacy-home-banner.jpg',
-	'/banners/nightmare.jpg',
-	'/banners/forging-banner.jpg',
-]
+	"/banners/atias-legacy-home-banner.jpg",
+	"/banners/nightmare.jpg",
+	"/banners/forging-banner.jpg",
+];
 
 export default function Home() {
 	return (
 		<>
 			<Header />
 
-			<div className='flex h-[calc(100vh-64px)] bg-darker overflow-hidden'>
+			<div className="flex h-[calc(100vh-64px)] bg-darker overflow-hidden">
 				<Sidebar />
 
-				<main className='flex-1 min-h-screen overflow-y-scroll max-w-5xl pt-8 pb-20 mx-auto text-white space-y-7 no-scrollbar'>
-					<div className='space-y-7'>
-						<div className='text-4xl font-bold'>
-							Welcome, Lunacian!
-						</div>
+				<main className="flex-1 min-h-screen px-4 overflow-y-scroll max-w-6xl pt-8 pb-20 mx-auto text-white space-y-12 no-scrollbar">
+					<Hero />
 
-						<Banner />
-					</div>
-
-					<div className='flex space-y-7 gap-6'>
-						<div className='flex-1 space-y-7 overflow-hidden'>
+					<div className="grid md:grid-cols-2 gap-6">
+						<div className="flex-1 space-y-12 overflow-hidden">
 							<Leaderboards />
 							<Marketplace />
 							<Discover />
@@ -41,5 +35,5 @@ export default function Home() {
 				</main>
 			</div>
 		</>
-	)
+	);
 }

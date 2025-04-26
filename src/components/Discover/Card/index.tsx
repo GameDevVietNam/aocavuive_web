@@ -1,24 +1,29 @@
 'use client'
 
 import clsx from 'clsx'
+import { motion } from 'motion/react'
 import { FC, memo, useState } from 'react'
+
+import { animation } from '@/constants/animation'
 
 interface CardProps {
 	src: string
 	title: string
 	description: string
+	i: number
 }
 
-const Card: FC<CardProps> = ({ src, title, description }) => {
+const Card: FC<CardProps> = ({ src, title, description, i }) => {
 	const [isHover, setIsHover] = useState(false)
 
 	return (
-		<div
+		<motion.div
+			{...animation.fadeIn}
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
 			className={clsx(
-				'rounded-2xl transition-all overflow-hidden bg-semidark cursor-pointer border-2 border-transparent',
-				isHover && '!border-orange-500 -translate-y-3 shadow-xl',
+				'rounded-2xl transition-colors overflow-hidden bg-semidark cursor-pointer border-2 border-transparent',
+				isHover && '!border-orange-500 shadow-xl',
 			)}>
 			<div
 				className={clsx(
@@ -48,7 +53,7 @@ const Card: FC<CardProps> = ({ src, title, description }) => {
 				</div>
 				<div className='text-sm text-gray-300'>{description}</div>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

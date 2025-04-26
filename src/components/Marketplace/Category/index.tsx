@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { FC, memo, useState } from 'react'
 
+import { animation } from '@/constants/animation'
+
 interface CategoryProps {
 	src: string
 	title: string
@@ -11,8 +13,9 @@ const Category: FC<CategoryProps> = ({ src, title, desc }) => {
 	const [isHover, setIsHover] = useState(false)
 
 	return (
-		<div
-			className='flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300'
+		<motion.div
+			{...animation.fromBot}
+			className='flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden cursor-pointer'
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}>
 			<div className='relative h-32'>
@@ -43,7 +46,7 @@ const Category: FC<CategoryProps> = ({ src, title, desc }) => {
 					)}
 				</AnimatePresence>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

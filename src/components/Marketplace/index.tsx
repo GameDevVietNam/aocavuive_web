@@ -1,7 +1,10 @@
 'use client'
 
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
+import { animation } from '@/constants/animation'
 
 import Category from './Category'
 
@@ -63,7 +66,11 @@ const Marketplace = () => {
 
 	return (
 		<div className='space-y-4'>
-			<div className='text-2xl font-bold'>Marketplace</div>
+			<motion.div
+				{...animation.fromBot}
+				className='text-2xl font-bold'>
+				Marketplace
+			</motion.div>
 
 			<div className='relative'>
 				{/* Navigation buttons */}

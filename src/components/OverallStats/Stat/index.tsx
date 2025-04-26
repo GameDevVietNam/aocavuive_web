@@ -1,8 +1,11 @@
 'use client'
 
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import { FC, memo } from 'react'
 import AnimatedNumbers from 'react-animated-numbers'
+
+import { animation } from '@/constants/animation'
 
 interface StatProps {
 	src: string
@@ -12,7 +15,9 @@ interface StatProps {
 
 const Stat: FC<StatProps> = ({ src, label, value }) => {
 	return (
-		<div className='flex items-center gap-3'>
+		<motion.div
+			{...animation.fromBot}
+			className='flex items-center gap-3'>
 			<div className='shrink-0 w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full'>
 				<Image
 					src={src}
@@ -34,7 +39,7 @@ const Stat: FC<StatProps> = ({ src, label, value }) => {
 					})}
 				/>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 
