@@ -4,7 +4,6 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import { FC, memo } from 'react'
 
-import AnimatedNumber from '@/components/AnimatedNumber'
 import { animation } from '@/constants/animation'
 
 interface StatProps {
@@ -29,7 +28,7 @@ const Stat: FC<StatProps> = ({ src, label, value }) => {
 
 			<div className='flex-1 space-y-1'>
 				<div className='text-gray-300 text-sm'>{label}</div>
-				<AnimatedNumber to={value} />
+				<div>{value.toLocaleString()}</div>
 			</div>
 		</motion.div>
 	)
