@@ -46,12 +46,12 @@ const Card: FC<CardProps> = ({ src, title, description, i }) => {
 			<div className='p-2 space-y-2'>
 				<div
 					className={clsx(
-						'text-xl font-semibold line-clamp-2',
+						'text-sm font-semibold line-clamp-2',
 						isHover && 'text-orage-500',
 					)}>
 					{title}
 				</div>
-				<div className='text-sm text-gray-300'>{description}</div>
+				{/* <div className='text-sm text-gray-300'>{description}</div> */}
 			</div>
 		</motion.div>
 	)

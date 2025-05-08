@@ -12,7 +12,7 @@ const Hero = () => {
 			<motion.div
 				{...animation.fromBot}
 				className='text-3xl md:text-4xl font-bold'>
-				Welcome, Lunacian!
+				Chào mừng, Ngư Thủ!
 			</motion.div>
 
 			<Banner />

@@ -18,7 +18,7 @@ const Header = () => {
 						height={40}
 						className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
 					/>
-					Daily bounties
+					Tin Tức
 				</Button>
 
 				<AuthModal />

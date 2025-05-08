@@ -22,46 +22,46 @@ const pages = [
 		label: "Home",
 		icon: <GoHomeFill />,
 	},
-	{
-		href: "/marketplace",
-		label: "Marketplace",
-		icon: <FaBagShopping />,
-	},
-	{
-		href: "/bounty-board",
-		label: "Bounty Board",
-		icon: <GoLog />,
-	},
-	{
-		href: "/games",
-		label: "Games",
-		icon: <FaGamepad />,
-	},
-	{
-		href: "/governance",
-		label: "Governance",
-		icon: <BsBank2 />,
-	},
-	{
-		href: "/lunalog",
-		label: "Lunalog",
-		icon: <FaBookBookmark />,
-	},
-	{
-		href: "/staking",
-		label: "Staking",
-		icon: <GiSwapBag size={20} />,
-	},
-	{
-		href: "/express",
-		label: "Lunacian Express",
-		icon: <WiTrain size={20} />,
-	},
-	{
-		href: "/game-store",
-		label: "Axie game store",
-		icon: <IoStorefront />,
-	},
+	// {
+	// 	href: "/marketplace",
+	// 	label: "Marketplace",
+	// 	icon: <FaBagShopping />,
+	// },
+	// {
+	// 	href: "/bounty-board",
+	// 	label: "Bounty Board",
+	// 	icon: <GoLog />,
+	// },
+	// {
+	// 	href: "/games",
+	// 	label: "Games",
+	// 	icon: <FaGamepad />,
+	// },
+	// {
+	// 	href: "/governance",
+	// 	label: "Governance",
+	// 	icon: <BsBank2 />,
+	// },
+	// {
+	// 	href: "/lunalog",
+	// 	label: "Lunalog",
+	// 	icon: <FaBookBookmark />,
+	// },
+	// {
+	// 	href: "/staking",
+	// 	label: "Staking",
+	// 	icon: <GiSwapBag size={20} />,
+	// },
+	// {
+	// 	href: "/express",
+	// 	label: "Lunacian Express",
+	// 	icon: <WiTrain size={20} />,
+	// },
+	// {
+	// 	href: "/game-store",
+	// 	label: "Axie game store",
+	// 	icon: <IoStorefront />,
+	// },
 ];
 
 const Sidebar = () => {

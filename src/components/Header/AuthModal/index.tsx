@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useState } from "react";
 import { FaFacebookF, FaGoogle } from "react-icons/fa6";
-
+import { Bounce, toast } from 'react-toastify';
 import { style } from "@/constants/style";
 import useDisclosure from "@/hooks/useDisclosure";
 import { Button } from "@/components/ui/button";
@@ -46,12 +46,25 @@ const AuthModal = () => {
 	return (
 		<>
 			<Button
-				onClick={onOpen}
+				onClick={()=>{
+					
+					toast('Chưa ra mắt', {
+						position: "top-center",
+						autoClose: 1000,
+						hideProgressBar: true,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "dark",
+						transition: Bounce,
+						});
+				}}
 				style={{
 					backgroundImage: style.backgroundImage,
 				}}
 			>
-				Log In
+				Đăng Nhập
 			</Button>
 
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>

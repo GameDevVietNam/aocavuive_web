@@ -11,24 +11,24 @@ import Category from './Category'
 const categories = [
 	{
 		src: 'axies-small.jpg',
-		title: 'Axies',
-		desc: '202980 Axies',
+		title: 'Chiến Ngư',
+		desc: '0 mặt hàng',
 	},
-	{
-		title: 'Accessories',
-		desc: '22 Accessories',
-		src: '/accessories-small.jpg',
-	},
-	{
-		title: 'Lands',
-		desc: '356 Plots',
-		src: '/lands-full-2.jpg',
-	},
-	{
-		title: 'Land Items',
-		desc: '1236 Items',
-		src: '/land-items-full-2.jpg',
-	},
+	// {
+	// 	title: 'Accessories',
+	// 	desc: '22 Accessories',
+	// 	src: '/accessories-small.jpg',
+	// },
+	// {
+	// 	title: 'Lands',
+	// 	desc: '356 Plots',
+	// 	src: '/lands-full-2.jpg',
+	// },
+	// {
+	// 	title: 'Land Items',
+	// 	desc: '1236 Items',
+	// 	src: '/land-items-full-2.jpg',
+	// },
 ]
 
 const Marketplace = () => {
@@ -69,7 +69,7 @@ const Marketplace = () => {
 			<motion.div
 				{...animation.fromBot}
 				className='text-2xl font-bold'>
-				Marketplace
+				Chợ đen
 			</motion.div>
 
 			<div className='relative'>
