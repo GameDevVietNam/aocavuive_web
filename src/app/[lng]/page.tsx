@@ -5,12 +5,6 @@ import Marketplace from '@/components/Marketplace'
 import OverallStats from '@/components/OverallStats'
 import Subscribe from '@/components/Subscribe'
 
-const banners = [
-	'/banners/atias-legacy-home-banner.jpg',
-	'/banners/nightmare.jpg',
-	'/banners/forging-banner.jpg',
-]
-
 export default function Home() {
 	return (
 		<>
