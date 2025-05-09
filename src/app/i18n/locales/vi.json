@@ -2,7 +2,7 @@
 	"welcome": "Xin chào, Ngư Thủ!",
 	"title": "Ao cá vui vẻ",
 	"description": "Trang chủ chính thức của Ao Cá Vui Vẻ, nhanh chóng, an toàn, tiện lợi.",
-	"notification": "Ngày 09/05/2025 chính thức mở đăng ký trước nhanh tay ngay nào!",
+	"notification": "Ngày 09/05/2025 chính thức mở đăng ký trước!",
 	"register": "Đăng ký",
 	"login": "Đăng nhập",
 	"dailyBounties": "Phần thưởng hàng ngày",
@@ -14,9 +14,6 @@
 	"benefits.4": "Nhận huy hiệu người hâm mộ",
 	"registerQuestion": "người chơi đã đăng ký, còn bạn thì sao?",
 	"top": "Danh sách người dẫn dầu",
-	"overallStats": "Chỉ số tổng thể",
-	"thisWeek": "Tuần này",
-	"thisWeek.desc": "Chỉ số được tạo tự động từ tuần trước trên máy chủ",
 	"discover": "Khám phá",
 	"marketplace": "Giao dịch"
 }

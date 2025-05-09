@@ -11,7 +11,7 @@ const Register = () => {
 	const { t } = useT()
 
 	return (
-		<div className='flex justify-evenly gap-7'>
+		<div className='flex justify-evenly flex-wrap gap-7'>
 			<motion.div
 				initial={{
 					translateX: -20,

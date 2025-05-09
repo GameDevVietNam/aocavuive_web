@@ -2,17 +2,13 @@
 
 import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { motion } from 'motion/react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { RiShareBoxLine } from 'react-icons/ri'
 
 import { useT } from '@/app/i18n/client'
 import { db } from '@/config/firebase'
 import { animation } from '@/constants/animation'
 import { IUser } from '@/interfaces/user'
 
-import { Button } from '../ui/button'
 import Pagination from './Pagination'
 import Rank from './Rank'
 
@@ -37,40 +33,6 @@ const Leaderboards = () => {
 				{...animation.fromBot}
 				className='text-xl font-semibold'>
 				{t('top')}
-			</motion.div>
-
-			<motion.div
-				{...animation.fromBot}
-				className='flex items-center gap-3 flex-nowrap overflow-x-scroll no-scrollbar'>
-				<Button>
-					<Image
-						src='/premier-ticket-icon.png'
-						alt=''
-						width={20}
-						height={20}
-					/>
-					Premier Bounty Board
-				</Button>
-
-				<Button>
-					<Image
-						src='/origins-game.png'
-						alt=''
-						width={20}
-						height={20}
-					/>
-					Axie Infinity: Origins
-				</Button>
-
-				<Button>
-					<Image
-						src='/classic-game.jpg'
-						alt=''
-						width={20}
-						height={20}
-					/>
-					Axie Classic
-				</Button>
 			</motion.div>
 
 			<motion.div
@@ -103,14 +65,7 @@ const Leaderboards = () => {
 						/>
 					))}
 
-				<div className='flex items-center flex-wrap gap-4 justify-between'>
-					<Link
-						href='/premier-bounty-board'
-						className='flex items-center gap-3 text-orange-400 font-medium'>
-						Premier Bounty Board
-						<RiShareBoxLine />
-					</Link>
-
+				<div className='flex justify-center mt-4'>
 					<Pagination
 						length={top.length}
 						itemsPerPage={itemsPerPage}

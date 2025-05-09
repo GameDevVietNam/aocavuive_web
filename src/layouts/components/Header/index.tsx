@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { useT } from '@/app/i18n/client'
 import { Button } from '@/components/ui/button'
@@ -12,15 +13,17 @@ const Header = () => {
 
 	return (
 		<div className='h-16 sticky top-0 left-0 w-full z-20 flex items-center justify-between bg-dark px-4'>
-			<Image
-				src='/logo.png'
-				alt='Logo'
-				width={50}
-				height={50}
-			/>
+			<Link href='/'>
+				<Image
+					src='/logo.png'
+					alt='Logo'
+					width={50}
+					height={50}
+				/>
+			</Link>
 
 			<div className='flex items-center gap-4'>
-				<Button className='bg-semidark text-white rounded-full'>
+				<Button className='bg-semidark text-xs md:text-base text-white rounded-full'>
 					<Image
 						src='/quests-tasks-icon.png'
 						alt='Quests Tasks Icon'

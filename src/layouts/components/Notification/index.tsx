@@ -10,7 +10,7 @@ const Notification = () => {
 
 	return (
 		<div
-			className='absolute top-0 left-0 w-full p-2 text-white text-center'
+			className='absolute top-0 left-0 w-full p-2 text-sm md:text-base text-white text-center'
 			style={{
 				backgroundImage: style.backgroundImage,
 			}}>
