@@ -1,7 +1,7 @@
 import './globals.css'
 
 import { dir } from 'i18next'
-import { Poppins } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { Toaster } from 'sonner'
 
 import DefaultLayout from '@/layouts/Default'
@@ -21,7 +21,7 @@ export async function generateMetadata() {
 	}
 }
 
-const poppins = Poppins({
+const roboto = Roboto({
 	weight: ['300', '400', '500', '600', '700', '900'],
 	subsets: ['latin'],
 })
@@ -39,7 +39,7 @@ export default async function RootLayout({
 		<html
 			lang={lng}
 			dir={dir(lng)}>
-			<body className={`${poppins.className} antialiased`}>
+			<body className={`${roboto.className} antialiased`}>
 				<DefaultLayout>{children}</DefaultLayout>
 				<Toaster />
 			</body>

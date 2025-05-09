@@ -1,5 +1,22 @@
 {
-	"welcome": "Welcome, Fisher!",
-	"title": "Ao cá vui vẻ",
-	"description": "Trang chủ chính thức của Ao Cá Vui Vẻ, nhanh chóng, an toàn, tiện lợi."
+	"welcome": "Hello, Fisherman!",
+	"title": "Happy Fish Pond",
+	"description": "The official homepage of Happy Fish Pond, fast, safe, and convenient.",
+	"notification": "Pre-registration officially opens on May 09, 2025, act fast!",
+	"register": "Register",
+	"login": "Login",
+	"dailyBounties": "Daily Rewards",
+	"preRegister": "Pre-register",
+	"benefits": "Benefits",
+	"benefits.1": "Receive the latest news and events",
+	"benefits.2": "Earn rewards for pre-registrants",
+	"benefits.3": "Don't miss out on the latest products",
+	"benefits.4": "Receive a fan badge",
+	"registerQuestion": "players has registered, how about you?",
+	"top": "Leader boards",
+	"overallStats": "Overall Stats",
+	"thisWeek": "This week",
+	"thisWeek.desc": "General stats from the past 7 days in the server",
+	"discover": "Discover",
+	"marketplace": "Marketplace"
 }

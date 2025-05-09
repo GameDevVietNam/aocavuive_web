@@ -2,17 +2,14 @@
 
 import { motion } from 'motion/react'
 
+import { useT } from '@/app/i18n/client'
+
 import Benefit from './Benefit'
 import RegisterForm from './RegisterForm'
 
-const benefits = [
-	'Receive the latest information, events',
-	'Get rewards for pre-subscribers',
-	"Don't miss out on the latest products",
-	'Receiving fan badges',
-]
+const Register = () => {
+	const { t } = useT()
 
-const Subscribe = () => {
 	return (
 		<div className='flex justify-evenly gap-7'>
 			<motion.div
@@ -25,12 +22,13 @@ const Subscribe = () => {
 					opacity: 1,
 				}}
 				className='space-y-4'>
-				<div className='text-3xl text-center font-bold'>Benefits</div>
+				<div className='text-3xl text-center font-bold'>
+					{t('benefits')}
+				</div>
 
-				{benefits.map((benefit, i) => (
+				{new Array(4).fill(undefined).map((_benefit, i) => (
 					<Benefit
-						key={benefit}
-						text={benefit}
+						key={i}
 						index={i}
 					/>
 				))}
@@ -41,4 +39,4 @@ const Subscribe = () => {
 	)
 }
 
-export default Subscribe
+export default Register

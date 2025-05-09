@@ -18,12 +18,12 @@ const Blog: FC<IBlog> = ({
 			href={`/blogs/${slug}`}
 			className='hover:text-orange-500 transition hover:-translate-y-2'>
 			<div
-				className='w-full h-48 bg-cover bg-center bg-no-repeat shadow-2xl rounded-2xl'
+				className='w-full h-32 bg-cover bg-center bg-no-repeat shadow-2xl rounded-2xl'
 				style={{
 					backgroundImage: `url(${thumbnailURL})`,
 				}}></div>
 
-			<div className='p-4 space-y-4'>
+			<div className='mt-4 space-y-4'>
 				<div className='font-semibold line-clamp-1 text-xl'>
 					{title}
 				</div>

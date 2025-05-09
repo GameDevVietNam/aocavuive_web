@@ -2,11 +2,14 @@
 
 import Image from 'next/image'
 
+import { useT } from '@/app/i18n/client'
 import { Button } from '@/components/ui/button'
 
 import AuthModal from './AuthModal'
 
 const Header = () => {
+	const { t } = useT()
+
 	return (
 		<div className='h-16 sticky top-0 left-0 w-full z-20 flex items-center justify-between bg-dark px-4'>
 			<Image
@@ -25,7 +28,7 @@ const Header = () => {
 						height={40}
 						className='w-8 h-8 sm:w-10 sm:h-10 object-contain'
 					/>
-					Daily bounties
+					{t('dailyBounties')}
 				</Button>
 
 				<AuthModal />

@@ -3,10 +3,9 @@
 import { collection, getDocs } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
+import Blog from '@/components/Blog'
 import { db } from '@/config/firebase'
 import { IBlog } from '@/interfaces/blog'
-
-import Blog from './components/Blog'
 
 const Blogs = () => {
 	const [loading, setLoading] = useState(true)
@@ -15,7 +14,9 @@ const Blogs = () => {
 	useEffect(() => {
 		;(async () => {
 			const snapshot = await getDocs(collection(db, 'blogs'))
-			const data = snapshot.docs.map((doc) => doc.data()) as IBlog[]
+			const data = snapshot.docs
+				.map((doc) => doc.data())
+				.slice(0, 3) as IBlog[]
 
 			setBlogs(data)
 			setLoading(false)
