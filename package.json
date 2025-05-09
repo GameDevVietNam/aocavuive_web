@@ -17,6 +17,8 @@
     "@radix-ui/react-tooltip": "^1.2.4",
     "@reduxjs/toolkit": "^2.7.0",
     "@tanstack/react-table": "^8.21.3",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",
     "firebase": "^11.7.1",

@@ -5,6 +5,8 @@ import { Roboto } from 'next/font/google'
 import { Toaster } from 'sonner'
 
 import DefaultLayout from '@/layouts/Default'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { getT } from '../i18n'
 import { languages } from '../i18n/settings'
@@ -42,6 +44,8 @@ export default async function RootLayout({
 			<body className={`${roboto.className} antialiased`}>
 				<DefaultLayout>{children}</DefaultLayout>
 				<Toaster />
+				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	)
