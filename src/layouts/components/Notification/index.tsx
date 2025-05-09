@@ -16,7 +16,7 @@ const Notification = () => {
 			}}>
 			{t('notification')}{' '}
 			<Link
-				href='#subscribe'
+				href='/#subscribe'
 				className='font-bold underline'>
 				{t('register')}
 			</Link>
