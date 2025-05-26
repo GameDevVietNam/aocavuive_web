@@ -1,6 +1,5 @@
 import { FC, memo } from 'react'
 
-import { useT } from '@/app/i18n/client'
 import { style } from '@/constants/style'
 
 interface BenefitProps {
@@ -8,8 +7,6 @@ interface BenefitProps {
 }
 
 const Benefit: FC<BenefitProps> = ({ index }) => {
-	const { t } = useT()
-
 	return (
 		<div className='flex items-center gap-3'>
 			<div
@@ -19,7 +16,13 @@ const Benefit: FC<BenefitProps> = ({ index }) => {
 				}}>
 				{index + 1}
 			</div>
-			{t(`benefits.${index + 1}`)}
+			{index === 0
+				? 'Luôn nhận được tin và sự kiện mới nhất'
+				: index === 1
+				? 'Nhận được phần thưởng cho người chơi đăng ký trước'
+				: index === 2
+				? 'Không bỏ lỡ những sản phẩm mới nhất'
+				: 'Nhận được huy hiệu cho FAN'}
 		</div>
 	)
 }

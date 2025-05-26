@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { FaFacebookF, FaGoogle } from 'react-icons/fa6'
 import { z } from 'zod'
 
-import { useT } from '@/app/i18n/client'
 import Modal from '@/components/Modal'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -36,7 +35,6 @@ const AuthModal = () => {
 	})
 	const [isDisabled, setIsDisabled] = useState(false)
 	const { isOpen, onOpen, onOpenChange } = useDisclosure()
-	const { t } = useT()
 
 	const onSubmit = async (data: z.infer<typeof formSchema>) => {
 		try {
@@ -54,7 +52,7 @@ const AuthModal = () => {
 				style={{
 					backgroundImage: style.backgroundImage,
 				}}>
-				{t('login')}
+				Đăng nhập
 			</Button>
 
 			<Modal

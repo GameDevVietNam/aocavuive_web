@@ -4,7 +4,6 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 
-import { useT } from '@/app/i18n/client'
 import { db } from '@/config/firebase'
 import { animation } from '@/constants/animation'
 import { IUser } from '@/interfaces/user'
@@ -15,7 +14,6 @@ import Rank from './Rank'
 const Leaderboards = () => {
 	const [top, setTop] = useState<IUser[]>([])
 	const [currentPage, setCurrentPage] = useState(1)
-	const { t } = useT()
 	const itemsPerPage = 5
 
 	useEffect(() => {
@@ -32,7 +30,7 @@ const Leaderboards = () => {
 			<motion.div
 				{...animation.fromBot}
 				className='text-xl font-semibold'>
-				{t('top')}
+				Bảng xếp hạng
 			</motion.div>
 
 			<motion.div

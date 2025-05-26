@@ -14,7 +14,6 @@ import { toast } from 'sonner'
 import { v4 as uuidv4 } from 'uuid'
 import { z } from 'zod'
 
-import { useT } from '@/app/i18n/client'
 import { Button } from '@/components/ui/button'
 import {
 	Form,
@@ -43,7 +42,6 @@ const RegisterForm = () => {
 		mode: 'onChange',
 	})
 	const [isDisabled, setIsDisabled] = useState(false)
-	const { t } = useT()
 
 	useEffect(() => {
 		;(async () => {
@@ -99,12 +97,12 @@ const RegisterForm = () => {
 				id='subscribe'
 				className='max-w-sm w-full rounded-2xl bg-white shadow-2xl p-4 text-black space-y-7'>
 				<div className='text-center space-y-2'>
-					<div className='text-3xl font-bold'>{t('preRegister')}</div>
+					<div className='text-3xl font-bold'>Đăng ký trước</div>
 					<div>
 						<span className='font-bold shadow-md rounded-2xl p-2 bg-gray-900 text-white'>
 							{subscribersCount + 4897}
 						</span>{' '}
-						{t('registerQuestion')}
+						người đã đăng ký trước. Bạn thì sao?
 					</div>
 				</div>
 

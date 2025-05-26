@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-import { useT } from '@/app/i18n/client'
 import { db } from '@/config/firebase'
 import { animation } from '@/constants/animation'
 import { IBlock } from '@/interfaces/block'
@@ -17,7 +16,6 @@ const Marketplace = () => {
 	const [categories, setCategories] = useState<IBlock[]>([])
 	const [scrollPosition, setScrollPosition] = useState(0)
 	const [isAnimating, setIsAnimating] = useState(false)
-	const { t } = useT()
 
 	const scrollAmount = 200
 
@@ -60,7 +58,7 @@ const Marketplace = () => {
 			<motion.div
 				{...animation.fromBot}
 				className='text-2xl font-bold'>
-				{t('marketplace')}
+				Sàn giao dịch
 			</motion.div>
 
 			<div className='relative'>
