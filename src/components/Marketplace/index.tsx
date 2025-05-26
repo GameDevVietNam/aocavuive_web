@@ -1,42 +1,25 @@
 'use client'
 
+import { collection, getDocs } from 'firebase/firestore'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
+import { useT } from '@/app/i18n/client'
+import { db } from '@/config/firebase'
 import { animation } from '@/constants/animation'
+import { IBlock } from '@/interfaces/block'
 
 import Category from './Category'
 
-const categories = [
-	{
-		src: 'axies-small.jpg',
-		title: 'Chiến Ngư',
-		desc: '0 mặt hàng',
-	},
-	// {
-	// 	title: 'Accessories',
-	// 	desc: '22 Accessories',
-	// 	src: '/accessories-small.jpg',
-	// },
-	// {
-	// 	title: 'Lands',
-	// 	desc: '356 Plots',
-	// 	src: '/lands-full-2.jpg',
-	// },
-	// {
-	// 	title: 'Land Items',
-	// 	desc: '1236 Items',
-	// 	src: '/land-items-full-2.jpg',
-	// },
-]
-
 const Marketplace = () => {
 	const carouselRef = useRef(null)
+	const [categories, setCategories] = useState<IBlock[]>([])
 	const [scrollPosition, setScrollPosition] = useState(0)
 	const [isAnimating, setIsAnimating] = useState(false)
+	const { t } = useT()
 
-	const scrollAmount = 200 // Khoảng cách mỗi lần cuộn
+	const scrollAmount = 200
 
 	const scrollLeft = () => {
 		if (isAnimating) return
@@ -56,6 +39,14 @@ const Marketplace = () => {
 	}
 
 	useEffect(() => {
+		;(async () => {
+			const snapshot = await getDocs(collection(db, 'marketplaces'))
+			const data = snapshot.docs.map((doc) => doc.data()) as IBlock[]
+			setCategories(data)
+		})()
+	}, [])
+
+	useEffect(() => {
 		if (isAnimating) {
 			const timer = setTimeout(() => {
 				setIsAnimating(false)
@@ -69,7 +60,7 @@ const Marketplace = () => {
 			<motion.div
 				{...animation.fromBot}
 				className='text-2xl font-bold'>
-				Chợ đen
+				{t('marketplace')}
 			</motion.div>
 
 			<div className='relative'>
@@ -101,7 +92,7 @@ const Marketplace = () => {
 						}}>
 						{categories.map((category) => (
 							<Category
-								key={category.src}
+								key={category.id}
 								{...category}
 							/>
 						))}

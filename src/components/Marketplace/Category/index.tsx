@@ -2,14 +2,9 @@ import { AnimatePresence, motion } from 'motion/react'
 import { FC, memo, useState } from 'react'
 
 import { animation } from '@/constants/animation'
+import { IBlock } from '@/interfaces/block'
 
-interface CategoryProps {
-	src: string
-	title: string
-	desc: string
-}
-
-const Category: FC<CategoryProps> = ({ src, title, desc }) => {
+const Category: FC<IBlock> = ({ backgroundURL, title, description }) => {
 	const [isHover, setIsHover] = useState(false)
 
 	return (
@@ -20,7 +15,7 @@ const Category: FC<CategoryProps> = ({ src, title, desc }) => {
 			onMouseLeave={() => setIsHover(false)}>
 			<div className='relative h-32'>
 				<img
-					src={src}
+					src={backgroundURL}
 					alt={title}
 					className='w-full h-full object-cover'
 				/>
@@ -40,7 +35,7 @@ const Category: FC<CategoryProps> = ({ src, title, desc }) => {
 								className='absolute bottom-4 left-4'>
 								<h3 className='text-xl font-medium'>{title}</h3>
 
-								<p className='text-gray-300'>{desc}</p>
+								<p className='text-gray-300'>{description}</p>
 							</motion.div>
 						</>
 					)}

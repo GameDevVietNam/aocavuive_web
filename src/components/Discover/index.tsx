@@ -1,37 +1,41 @@
-import Card from "./Card";
+'use client'
 
-const items = [
-	{
-		title: "Khai mở website chính thức",
-		src: "/discover-get-started.jpg",
-		description:
-			"Khai mở",
-	},
-	// {
-	// 	title: "A New & Returning Player's Guide to Axie Infinity",
-	// 	src: "/discover-player-guide.jpg",
-	// 	description: "A summary of Lunacia's fruitful history.",
-	// },
-	// {
-	// 	title: "The Collectible Axies Overview",
-	// 	src: "/discover-collectible.jpg",
-	// 	description:
-	// 		"Dive deep into fascinating axies and learn how they came to be.",
-	// },
-];
+import { collection, getDocs } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
+
+import { useT } from '@/app/i18n/client'
+import { db } from '@/config/firebase'
+import { IBlog } from '@/interfaces/blog'
+
+import Blog from '../Blog'
 
 const Discover = () => {
-	return (
-		<div className="space-y-4">
-			<div className="text-2xl font-semibold">Tin tức</div>
+	const [blogs, setBlogs] = useState<IBlog[]>([])
+	const { t } = useT()
 
-			<div className="grid gap-4 md:grid-cols-3">
-				{items.map((item, i) => (
-					<Card key={item.title} {...item} i={i} />
+	useEffect(() => {
+		;(async () => {
+			const snapshot = await getDocs(collection(db, 'blogs'))
+			const data = snapshot.docs.map((doc) => doc.data()) as IBlog[]
+
+			setBlogs(data)
+		})()
+	}, [])
+
+	return (
+		<div className='space-y-4'>
+			<div className='text-2xl font-semibold'>{t('discover')}</div>
+
+			<div className='grid gap-4 md:grid-cols-3'>
+				{blogs.map((blog) => (
+					<Blog
+						key={blog.id}
+						{...blog}
+					/>
 				))}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Discover;
+export default Discover
