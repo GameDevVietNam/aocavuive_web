@@ -11,11 +11,11 @@ const Notification = () => {
 			style={{
 				backgroundImage: style.backgroundImage,
 			}}>
-			Chính thức mở đăng ký trước, quà vô số ae ơi.{' '}
+			Chính thức mở đăng ký trước.{' '}
 			<Link
 				href='/#subscribe'
 				className='font-bold underline'>
-				Đăng ký
+				Đăng ký ngay
 			</Link>
 		</div>
 	)

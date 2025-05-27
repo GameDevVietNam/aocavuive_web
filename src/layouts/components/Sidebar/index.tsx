@@ -1,9 +1,12 @@
+'use client'
+
 import { BsBank2 } from 'react-icons/bs'
 import { FaBlog } from 'react-icons/fa'
 import {
 	FaBagShopping,
 	FaBookBookmark,
 	FaDiscord,
+	FaFacebook,
 	FaGamepad,
 	FaXTwitter,
 	FaYoutube,
@@ -20,49 +23,49 @@ import ActiveLink from './ActiveLink'
 const pages = [
 	{
 		href: '/',
-		label: 'Home',
+		label: 'Trang chủ',
 		icon: <GoHomeFill />,
 	},
-	{
-		href: '/marketplace',
-		label: 'Marketplace',
-		icon: <FaBagShopping />,
-	},
-	{
-		href: '/bounty-board',
-		label: 'Bounty Board',
-		icon: <GoLog />,
-	},
-	{
-		href: '/games',
-		label: 'Games',
-		icon: <FaGamepad />,
-	},
-	{
-		href: '/governance',
-		label: 'Governance',
-		icon: <BsBank2 />,
-	},
-	{
-		href: '/lunalog',
-		label: 'Lunalog',
-		icon: <FaBookBookmark />,
-	},
-	{
-		href: '/staking',
-		label: 'Staking',
-		icon: <GiSwapBag size={20} />,
-	},
-	{
-		href: '/express',
-		label: 'Lunacian Express',
-		icon: <WiTrain size={20} />,
-	},
-	{
-		href: '/game-store',
-		label: 'Axie game store',
-		icon: <IoStorefront />,
-	},
+// 	{
+// 		href: '/marketplace',
+// 		label: 'Marketplace',
+// 		icon: <FaBagShopping />,
+// 	},
+// 	{
+// 		href: '/bounty-board',
+// 		label: 'Bounty Board',
+// 		icon: <GoLog />,
+// 	},
+// 	{
+// 		href: '/games',
+// 		label: 'Games',
+// 		icon: <FaGamepad />,
+// 	},
+// 	{
+// 		href: '/governance',
+// 		label: 'Governance',
+// 		icon: <BsBank2 />,
+// 	},
+// 	{
+// 		href: '/lunalog',
+// 		label: 'Lunalog',
+// 		icon: <FaBookBookmark />,
+// 	},
+// 	{
+// 		href: '/staking',
+// 		label: 'Staking',
+// 		icon: <GiSwapBag size={20} />,
+// 	},
+// 	{
+// 		href: '/express',
+// 		label: 'Lunacian Express',
+// 		icon: <WiTrain size={20} />,
+// 	},
+// 	{
+// 		href: '/game-store',
+// 		label: 'Axie game store',
+// 		icon: <IoStorefront />,
+// 	},
 ]
 
 const Sidebar = () => {
@@ -78,7 +81,7 @@ const Sidebar = () => {
 			</div>
 
 			<div className='flex flex-col gap-4 items-center'>
-				<Button className='hover:text-orange-500 bg-transparent'>
+				{/* <Button className='hover:text-orange-500 bg-transparent'>
 					<FaBlog />
 				</Button>
 
@@ -88,10 +91,12 @@ const Sidebar = () => {
 
 				<Button className='hover:text-orange-500 bg-transparent'>
 					<FaDiscord />
-				</Button>
+				</Button> */}
 
-				<Button className='hover:text-orange-500 bg-transparent'>
-					<FaYoutube />
+				<Button className='hover:text-orange-500 bg-transparent'
+				onClick={
+					() => window.open('https://www.facebook.com/BachTuocMuoiTieu.MyFish/', '_blank')}>
+					<FaFacebook />
 				</Button>
 			</div>
 		</div>

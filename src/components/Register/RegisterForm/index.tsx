@@ -61,7 +61,7 @@ const RegisterForm = () => {
 			const querySnapshot = await getDocs(emailQuery)
 
 			if (!querySnapshot.empty) {
-				toast.error('Email already exists')
+				toast.error('Email này đã được đăng ký trước!')
 				return
 			}
 
@@ -73,7 +73,7 @@ const RegisterForm = () => {
 				updatedAt: Date.now(),
 			})
 
-			toast.success('User created successfully')
+			toast.success('Đăng ký thành công! Cảm ơn bạn đã đăng ký trước.')
 			form.reset()
 		} catch (error) {
 			toast.error(`Error: ${JSON.stringify(error)}`)
@@ -100,7 +100,7 @@ const RegisterForm = () => {
 					<div className='text-3xl font-bold'>Đăng ký trước</div>
 					<div>
 						<span className='font-bold shadow-md rounded-2xl p-2 bg-gray-900 text-white'>
-							{subscribersCount + 4897}
+							{subscribersCount + 47}
 						</span>{' '}
 						người đã đăng ký trước. Bạn thì sao?
 					</div>
@@ -114,7 +114,7 @@ const RegisterForm = () => {
 							<FormLabel>Email</FormLabel>
 							<FormControl>
 								<Input
-									placeholder='shadcn'
+									placeholder='Nhập email của bạn'
 									{...field}
 								/>
 							</FormControl>
@@ -130,7 +130,7 @@ const RegisterForm = () => {
 					className='w-full'
 					disabled={isDisabled}
 					type='submit'>
-					Submit
+					Đăng ký trước
 				</Button>
 			</motion.form>
 		</Form>

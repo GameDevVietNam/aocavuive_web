@@ -18,6 +18,7 @@ import { Input } from '@/components/ui/input'
 import { style } from '@/constants/style'
 import useDisclosure from '@/hooks/useDisclosure'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
 
 const formSchema = z.object({
 	email: z.string().email(),
@@ -48,7 +49,10 @@ const AuthModal = () => {
 	return (
 		<>
 			<Button
-				onClick={onOpen}
+				// onClick={onOpen}
+				onClick={() => {
+					toast.info("Chức năng đang được phát triển, vui lòng quay lại sau nhé!")
+				}}
 				style={{
 					backgroundImage: style.backgroundImage,
 				}}>
@@ -63,7 +67,7 @@ const AuthModal = () => {
 						className='space-y-7'
 						onSubmit={form.handleSubmit(onSubmit)}>
 						<div className='text-3xl text-center font-bold'>
-							Welcome to Ao Ca Vui Ve
+							Welcome to Ao Ca Vui Vẻ
 						</div>
 
 						<FormField

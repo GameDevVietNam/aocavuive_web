@@ -2,6 +2,7 @@
 
 import clsx from 'clsx'
 import { collection, getDocs } from 'firebase/firestore'
+import { useRouter } from 'next/navigation'
 import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
@@ -12,9 +13,11 @@ import { style } from '@/constants/style'
 import { IBlock } from '@/interfaces/block'
 
 import { Button } from '../../ui/button'
+import { IBlog } from '@/interfaces/blog'
 
 const Banner = () => {
-	const [banners, setBanners] = useState<IBlock[]>([])
+	const router = useRouter()
+	const [banners, setBanners] = useState<IBlog[]>([])
 	const [loading, setLoading] = useState(true)
 	const [activeIndex, setActiveIndex] = useState(0)
 	const timerRef = useRef<NodeJS.Timeout>(null)
@@ -40,10 +43,10 @@ const Banner = () => {
 	}, [])
 
 	useEffect(() => {
-		;(async () => {
-			const snapshot = await getDocs(collection(db, 'banners'))
+		; (async () => {
+			const snapshot = await getDocs(collection(db, 'blogs'))
 			const data = snapshot.docs.map((doc) => doc.data())
-			setBanners(data as IBlock[])
+			setBanners(data as IBlog[])
 			setLoading(false)
 		})()
 	}, [])
@@ -64,7 +67,7 @@ const Banner = () => {
 							animate={{ opacity: 1, translateX: 0 }}
 							className='absolute inset-0 bg-cover bg-bottom-right md:bg-center bg-no-repeat'
 							style={{
-								backgroundImage: `url(${banner.backgroundURL})`,
+							backgroundImage: `url(${banner.thumbnailURL}?v=${banner.updatedAt || new Date().getTime()})`,
 							}}></motion.div>
 					),
 			)}
@@ -83,13 +86,14 @@ const Banner = () => {
 
 				<div className='flex items-center gap-3'>
 					<Button
+					onClick={() => router.push(`/blogs/${banners[activeIndex].slug}`)}
 						style={{
 							backgroundImage: style.backgroundImage,
 						}}>
-						Get started
-					</Button>
+						Xem thêm
+						</Button>
 
-					<Button>Learn more</Button>
+					{/* <Button>Learn more</Button> */}
 				</div>
 			</div>
 
@@ -103,7 +107,7 @@ const Banner = () => {
 						)}
 						onClick={() => setActiveIndex(i)}
 						style={{
-							backgroundImage: `url(${banner.backgroundURL})`,
+							backgroundImage: `url(${banner.thumbnailURL}?v=${banner.updatedAt || new Date().getTime()})`,
 						}}></div>
 				))}
 			</div>

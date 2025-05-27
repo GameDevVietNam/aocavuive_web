@@ -20,7 +20,7 @@ const Blog: FC<IBlog> = ({
 			<div
 				className='w-full h-32 bg-cover bg-center bg-no-repeat shadow-2xl rounded-2xl'
 				style={{
-					backgroundImage: `url(${thumbnailURL})`,
+							backgroundImage: `url(${thumbnailURL}?v=${new Date().getTime()})`,
 				}}></div>
 
 			<div className='mt-4 space-y-4'>
