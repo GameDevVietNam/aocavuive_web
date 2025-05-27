@@ -1,17 +1,13 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-	/* config options here */
-	output: 'export',
 	images: {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'png.pngtree.com',
-				pathname: '/**',
+				hostname: 'myfish.devmini.com',
 			},
 		],
-		unoptimized: true,
 	},
 }
 
