@@ -22,8 +22,42 @@ export const columns: ColumnDef<ISubscriber>[] = [
 		header: 'Created At',
 		cell: ({ row }) => {
 			const value = row.getValue('createdAt')
-
-			return moment(value as Date).fromNow()
+			// Assuming createdAt is a timestamp (number)
+			return moment(value as number).fromNow()
 		},
+	},
+	{
+		accessorKey: 'updatedAt',
+		header: 'Updated At',
+		cell: ({ row }) => {
+			const value = row.getValue('updatedAt')
+			// Assuming updatedAt is a timestamp (number)
+			return moment(value as number).fromNow()
+		},
+	},
+	{
+		accessorKey: 'ipAddress',
+		header: 'IP Address',
+	},
+	{
+		accessorKey: 'userAgent',
+		header: 'User Agent',
+		// Optional: You might want to truncate or style this if it's too long
+		// cell: ({ row }) => {
+		//   const value = row.getValue('userAgent') as string;
+		//   return <div title={value} className="truncate w-64">{value}</div>;
+		// }
+	},
+	{
+		accessorKey: 'language',
+		header: 'Language',
+	},
+	{
+		accessorKey: 'screenWidth',
+		header: 'Screen Width',
+	},
+	{
+		accessorKey: 'screenHeight',
+		header: 'Screen Height',
 	},
 ]

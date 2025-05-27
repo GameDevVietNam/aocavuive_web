@@ -65,16 +65,41 @@ const RegisterForm = () => {
 				return
 			}
 
+			// --- Bắt đầu: Thu thập thông tin IP và thiết bị ---
+			let ipAddress = null
+			try {
+				const ipResponse = await fetch('https://api.ipify.org?format=json')
+				if (ipResponse.ok) {
+					const ipData = await ipResponse.json()
+					ipAddress = ipData.ip
+				} else {
+					console.warn('Không thể lấy địa chỉ IP:', ipResponse.statusText)
+				}
+			} catch (ipError) {
+				console.warn('Lỗi khi lấy địa chỉ IP:', ipError)
+			}
+
+			const userAgent = navigator.userAgent
+			const language = navigator.language
+			const screenWidth = window.screen.width
+			const screenHeight = window.screen.height
+			// --- Kết thúc: Thu thập thông tin IP và thiết bị ---
+
 			const id = uuidv4()
 			await setDoc(doc(usersRef, id), {
 				id,
 				...data,
 				createdAt: Date.now(),
 				updatedAt: Date.now(),
+				// Thêm thông tin mới
+				ipAddress,
+				userAgent,
+				language,
+				screenWidth,
+				screenHeight,
 			})
 
 			toast.success('Đăng ký thành công! Cảm ơn bạn đã đăng ký trước.')
-			form.reset()
 		} catch (error) {
 			toast.error(`Error: ${JSON.stringify(error)}`)
 		} finally {
