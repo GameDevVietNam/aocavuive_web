@@ -15,7 +15,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
 				<div className='relative overflow-x-hidden flex-1 min-h-screen overflow-y-scroll'>
 					<Notification />
 
-					<main className='px-4 max-w-6xl md:pt-16 pt-24 pb-20 mx-auto text-white space-y-12'>
+					<main className='px-4 max-w-6xl md:pt-16 pt-24 pb-20 mx-auto text-white space-y-16'>
 						{children}
 					</main>
 				</div>
